@@ -1,0 +1,22 @@
+<header>
+    <div class="site__header">
+        <div class="logo">logo</div>
+        <nav>
+            <ul>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if page_name == 'home' %}-active{% endif %}" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if page_name == 'about' %}-active{% endif %}" href="/about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if page_name == 'contact' %}-active{% endif %}" href="/contact">Contact</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</header>

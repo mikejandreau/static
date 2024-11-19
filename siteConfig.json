@@ -1,0 +1,9 @@
+{
+  "websiteName": "Website Name",
+  "defaultDescription": "Default website description",
+  "siteUrl": "https://example.com",
+  "authorName": "Your Name Here",
+  "defaultImage": "/assets/img/path-to-your-image.jpg",
+  "themeColor": "#ffffff",
+  "faviconPath": "/assets/img/favicons"
+}

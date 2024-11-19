@@ -1,0 +1,302 @@
+// PrismJS 1.29.0
+// https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+liquid+markup-templating+php+scss&plugins=toolbar+copy-to-clipboard
+
+// gutter between columns calculated in grid
+$code_margin: 20px;
+$code_block_padding: $code_margin * 1.2;
+
+$code_block_title: $code_margin * 2.4;
+$code_margin_top: $code_margin * 3.4;
+$inline_code_padding: $code_margin * 0.5;
+
+// Color scheme for code blocks
+// BASE16 THEMES: https://chriskempson.github.io/base16/
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+$base00: #2b303b; // black
+$base01: #343d46; // darkest gray
+$base02: #4f5b66; // darker gray
+$base03: #65737e; // dark gray
+$base04: #a7adba; // medium gray
+$base05: #c0c5ce; // light gray
+$base06: #dfe1e8; // lighter gray
+$base07: #eff1f5; // white
+$base08: #bf616a; // red
+$base09: #d08770; // orange
+$base0A: #ebcb8b; // yellow
+$base0B: #a3be8c; // green
+$base0C: #96b5b4; // blue
+$base0D: #8fa1b3; // indigo
+$base0E: #b48ead; // violet
+$base0F: #ab7967; // brown
+
+$color_background_pre: #eee;
+$font_pre: "Source Code Pro", Monaco, Consolas, monospace;
+$font_weight_pre: 400;
+$font_line_height_pre: 1.6;
+$border_radius: 0;
+
+[class*="language-"],
+[class*="code-"] {
+  border-radius: $border_radius;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  color: #ccc;
+  background: 0 0;
+  font-family: $font_pre;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 2; // internal spacing for code blocks
+  hyphens: none;
+}
+
+pre:not([class*="language-"]) {
+  box-sizing: border-box;
+  background: $color_background_pre;
+  padding: $code_block_padding $code_block_padding;
+  margin-top: 0;
+}
+
+pre > code[class*="language-"] {
+  padding: $code_margin_top $code_block_padding $code_block_padding;
+
+  &:before {
+    font-family: $font_pre;
+    font-weight: $font_weight_pre;
+    display: block;
+    content: "example";
+    position: absolute;
+    z-index: 10;
+    text-transform: uppercase;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    padding: 0 $code_block_padding;
+    line-height: $code_block_title + 4;
+    height: $code_block_title;
+    background: $base01;
+    color: $base07; // default color of code language title blocks
+  }
+
+  &[class*="-output"] {
+    background: #fff;
+    // background: $base07;
+    // border: 1px solid $base05;
+    padding: ($code_block_title + $code_block_padding) $code_block_padding
+      $code_block_padding;
+
+    &:before {
+      background: $base03;
+      content: "Output";
+    }
+  }
+
+  &[class*="-javascript"]:before,
+  &[class*="-js"]:before {
+    background: darken($base0A, 15%);
+    content: "JavaScript";
+  }
+
+  &[class*="-jquery"]:before {
+    background: darken($base09, 5%);
+    content: "jQuery";
+  }
+
+  &[class*="-html"]:before {
+    background: darken($base0D, 10%);
+    content: "HTML";
+  }
+
+  &[class*="-scss"]:before {
+    background: darken($base0C, 10%);
+    content: "SCSS";
+  }
+
+  &[class*="-php"]:before {
+    background: darken($base0E, 10%);
+    content: "PHP";
+  }
+
+  &[class*="-ruby"]:before {
+    background: darken($base08, 5%);
+    content: "Ruby";
+  }
+
+  &[class*="-css"]:before {
+    background: darken($base0B, 10%);
+    content: "CSS";
+  }
+
+  &[class*="-python"]:before {
+    background: darken($base0C, 20%);
+    content: "Python";
+  }
+
+  &[class*="-xml"]::before {
+    background: darken($base0C, 5%);
+    content: "XML";
+  }
+}
+
+pre[class*="language-"] {
+  padding: 0;
+  margin: 0 0 2.5rem;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: $base00;
+}
+
+:not(pre) > code[class*="language-"] {
+  font-size: 0.8em;
+  padding: 1px $inline_code_padding;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token {
+  &.block-comment,
+  &.cdata,
+  &.comment,
+  &.doctype,
+  &.prolog {
+    color: #999;
+  }
+
+  &.punctuation {
+    color: #ccc;
+  }
+
+  &.attr-name,
+  &.deleted,
+  &.namespace,
+  &.tag {
+    color: #e2777a;
+  }
+
+  &.function-name {
+    color: #6196cc;
+  }
+
+  &.boolean,
+  &.function,
+  &.number {
+    color: #f08d49;
+  }
+
+  &.class-name,
+  &.constant,
+  &.property,
+  &.symbol {
+    color: #f8c555;
+  }
+
+  &.atrule,
+  &.builtin,
+  &.important,
+  &.keyword,
+  &.selector {
+    color: #cc99cd;
+  }
+
+  &.attr-value,
+  &.char,
+  &.regex,
+  &.string,
+  &.variable {
+    color: #7ec699;
+  }
+
+  &.entity,
+  &.operator,
+  &.url {
+    color: #67cdcc;
+  }
+
+  &.bold,
+  &.important {
+    font-weight: 700;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.entity {
+    cursor: help;
+  }
+
+  &.inserted {
+    color: green;
+  }
+}
+
+div.code-toolbar {
+  position: relative;
+
+  > .toolbar {
+    position: absolute;
+    z-index: 10;
+    top: 0.35em;
+    right: 0.3em;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.7;
+
+    &:hover,
+    &:focus-within {
+      opacity: 1;
+    }
+
+    > .toolbar-item {
+      display: inline-block;
+
+      > a {
+        cursor: pointer;
+      }
+
+      > button {
+        background: 0 0;
+        border: 0;
+        color: inherit;
+        font: inherit;
+        line-height: normal;
+        overflow: visible;
+        padding: 0.5rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+
+      > a,
+      > button,
+      > span {
+        color: #fff;
+        font-size: 0.8em;
+        padding: 0 1em;
+        background: #f5f2f0;
+        background: rgba(224, 224, 224, 0.5);
+        // box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+        border-radius: 0.5em;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 36px;
+
+        &:focus,
+        &:hover {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{% set page_name = 'about' %}
+{% set page_title = 'About' %}
+{% set page_description = 'Some information about us' %}
+{% set SEO_description = 'SEO related items for the meta tag' %}
+{% set SEO_keywords = 'SSG, Nunjucks, Gulp, JavaScript' %}
+{% set page_image = page_image or '/assets/img/default-image.jpg' %}  {# Fallback for page image #}
+{% extends "layouts/layout.html" %}
+
+{% block head %}
+    <title>{{ siteConfig.websiteName }} | {{ page_title }}</title>
+    <meta name="description" content="{{ SEO_description }}">
+    <meta name="keywords" content="{{ SEO_keywords }}">
+    <meta property="og:image" content="{{ page_image }}">
+    <meta name="twitter:image" content="{{ page_image }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	
+	<div class="row">
+		<div class="eight columns">
+			<h2>Title</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Repellendus illo eum, sunt perferendis quas libero quae rerum quibusdam consequuntur quidem fugiat velit quod qui, magni eos aliquam non. Deleniti, amet.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia optio aliquam voluptas magnam exercitationem officiis odio numquam, placeat tempora distinctio quam est, neque, assumenda possimus quaerat perferendis sint vero in. Lorem ipsum dolor, sit, amet consectetur adipisicing elit. Fugiat expedita molestias repellat consectetur labore temporibus ab alias, id inventore, reprehenderit excepturi quam quae rem tempora nisi ex libero veniam unde.</p>
+		</div>
+		<div class="four columns">
+			<h3>title</h3>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae veniam quasi magni, culpa aperiam cumque, officiis adipisci corrupti debitis, suscipit laudantium illum architecto amet tempore? Labore corrupti dolore quisquam dolor.
+		</div>
+	</div>
+	
+</div>
+
+{% endblock %}
+

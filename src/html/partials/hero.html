@@ -1,0 +1,15 @@
+<div class="hero {% if page_name === 'home' %} -home {% endif %}">
+    <div class="container">
+    <div class="hero__content">
+        <h1>{{ page_title }}</h1>
+
+        {% if page_description %}
+        <p>{{ page_description }}</p>
+        {% endif %}
+
+        {% if page_name === 'home' %}
+        <a href="#" class="button">Oh Snap</a>
+        {% endif %}
+    </div>
+    </div>
+</div>
